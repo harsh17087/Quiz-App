@@ -1,4 +1,4 @@
-# QuizApp
+# QuizApp project as Angular project for EY training
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
 
