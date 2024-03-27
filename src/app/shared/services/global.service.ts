@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class GlobalService {
 
-  baseUrl = "http://localhost:8888"
+  baseUrl = "https://api-3-bik5.onrender.com"
+  
   constructor(private _http:HttpClient) { }
 
   // get request
@@ -17,7 +18,8 @@ export class GlobalService {
 
   // delete request
   deleteRequest(tableName:any,id:any):Observable<any>{
-    return this._http.delete(`${this.baseUrl}/${tableName}/${id}`)
+    console.log("deleteRequest executed")
+    return  this._http.delete(`${this.baseUrl}/${tableName}/${id}`)
   }
 
   // post request

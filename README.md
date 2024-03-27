@@ -29,3 +29,37 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Contributors
 
 This project is made by Tanmay, Shrey, Rajesh, Totan...........etc
+
+# Quiz App Project Directory
+
+QUIZ APP - Frontend
+
+## **localhost:4200/quiz**
+
+|--- Quiz Login + validation \
+|--- Quiz Register + validation \
+|--- Quiz App Login (based on exam and voucher) \
+|--- Exam Page (single question with timer and submit button) \
+|--- Obtained score Page
+
+
+
+## localhost:4200/quizappdashboard
+
+|--- Admin Login \
+|--- Admin Dashboard \
+	|--- Student (Default)
+	|--- Voucher (CRUD + pagination)
+	|--- Exam (CRUD + pagination)
+
+
+QUIZ APP - Backend
+
+API required
+
+|--- Users
+|--- Questions
+|--- Voucher
+|--- Exam
+
+Project Collaboration - Github

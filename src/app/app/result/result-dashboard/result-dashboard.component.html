@@ -1,0 +1,21 @@
+<p>result-dashboard works!</p>
+<table class="table table-hover">
+    <thead class="table-header table-dark">
+        <tr>
+            <th>Sr. No</th>
+            <th>Name</th>
+            <th>Result</th>
+            <th>Total Marks</th>
+            <th>Obtained Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of resultArray?.data">
+            <td>{{result.id}}</td>
+            <td>{{result.stdName}}</td>
+            <td>{{result.resultStatus}}</td>
+            <td>{{result.totalMarks}}</td>
+            <td>{{result.obtainedMarks}}</td>
+        </tr>
+    </tbody>
+</table>
