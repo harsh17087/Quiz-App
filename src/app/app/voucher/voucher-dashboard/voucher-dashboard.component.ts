@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { GlobalService } from '../../../shared/services/global.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-voucher-dashboard',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule,RouterModule,NgxPaginationModule],
   templateUrl: './voucher-dashboard.component.html',
   styleUrl: './voucher-dashboard.component.css'
 })
@@ -38,6 +39,7 @@ import { RouterModule } from '@angular/router';
 
 export class VoucherDashboardComponent {
   voucherArray:any
+  p:number=1
   
   constructor(private _globalSer:GlobalService){}
   

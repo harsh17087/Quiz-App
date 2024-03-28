@@ -36,7 +36,7 @@ export class GlobalService {
   // put request
 
   putRequest(tableName:any,id:any,data:any){
-    return this._http.get(`${this.baseUrl}/${tableName}/${id}`,data)  
+    return this._http.put(`${this.baseUrl}/${tableName}/${id}`,data)  
   }
 
   // sign In --- set user in session storage

@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class LoginUserComponent {
   userData:any
   userDb:any=[]
+  showName:any
   constructor(private _globalSer:GlobalService, private _router:Router){}
 
   ngOnInit(){

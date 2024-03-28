@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:"",component:ExamDashboardComponent},
   {path:'examdashboard',component:ExamDashboardComponent},
   {path:'examadd',component:ExamAddComponent},
-  {path:'examedit',component:ExamEditComponent},
+  {path:'examedit/:id',component:ExamEditComponent},
 ];
 
 @NgModule({

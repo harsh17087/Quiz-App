@@ -1,6 +1,6 @@
 <p>result-dashboard works!</p>
 <table class="table table-hover">
-    <thead class="table-header table-dark">
+    <thead class="table-header table-dark table-bordered table-striped table-responsive">
         <tr>
             <th>Sr. No</th>
             <th>Name</th>
@@ -10,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let result of resultArray?.data">
+        <tr *ngFor="let result of resultArray?.data | paginate: { itemsPerPage: 10, currentPage: p }">
             <td>{{result.id}}</td>
             <td>{{result.stdName}}</td>
             <td>{{result.resultStatus}}</td>
@@ -19,3 +19,4 @@
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event" style="float: right;"></pagination-controls>

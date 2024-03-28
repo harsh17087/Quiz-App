@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:"",component:VoucherDashboardComponent},
   {path:'voucherdash',component:VoucherDashboardComponent},
   {path:'voucheradd',component:VoucherAddComponent},
-  {path:'voucheredit',component:VoucherEditComponent},
+  {path:'voucheredit/:id',component:VoucherEditComponent},
 ];
 
 @NgModule({

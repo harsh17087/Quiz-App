@@ -30,13 +30,10 @@
     <mat-sidenav-content>
       <mat-toolbar class="title-toolbar"> 
         <mat-toolbar-row> 
-          <span class="title-center">Welcome admin</span> 
+          <span class="title-center">Welcome      <b>{{showName}}</b></span> 
           
           <span class="log-out"></span> 
-            <mat-icon class="example-icon" 
-              aria-hidden="false" 
-              >exit_to_app 
-        </mat-icon>
+           <button (click)="logOut()" class="btn btn-outline-danger"><mat-icon class="example-icon" aria-hidden="false">exit_to_app</mat-icon></button>
         </mat-toolbar-row> 
       </mat-toolbar>
       <router-outlet/>
