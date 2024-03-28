@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule,Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { GlobalService } from '../../shared/services/global.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @Component({
   selector: 'app-login-user',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,],
+  imports: [FormsModule, ReactiveFormsModule,CommonModule,MatInputModule,MatButtonModule,MatFormFieldModule],
   templateUrl: './login-user.component.html',
   styleUrl: './login-user.component.css'
 })
@@ -17,13 +23,13 @@ export class LoginUserComponent {
 
   ngOnInit(){
     this.userData=new FormGroup({
-      userId:new FormControl(""),
-      userPass:new FormControl("")
+      userId:new FormControl("",[Validators.required,Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]),
+      userPass:new FormControl("",[Validators.required,Validators.pattern("^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$")]),
     })
   }
 
   checkData(){
-    // console.log(this.userData.value)
+    console.log(this.userData.value)
     this._globalSer.getRequest("users").subscribe((res)=>{
       this.userDb=res.data
       // console.log(this.userDb)
@@ -37,4 +43,6 @@ export class LoginUserComponent {
       }
     })
   }
+
+
 }
