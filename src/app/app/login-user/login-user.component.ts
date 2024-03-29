@@ -5,14 +5,14 @@ import { CommonModule } from '@angular/common';
 import { GlobalService } from '../../shared/services/global.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+// import {MatInputModule} from '@angular/material/input';
+// import {MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-login-user',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,CommonModule,MatInputModule,MatButtonModule,MatFormFieldModule],
+  imports: [FormsModule, ReactiveFormsModule,CommonModule],
   templateUrl: './login-user.component.html',
   styleUrl: './login-user.component.css'
 })
