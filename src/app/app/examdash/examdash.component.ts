@@ -36,12 +36,12 @@ export class ExamdashComponent {
   checkData(){
     console.log(this.userData.value);
     this._globalSer.getRequest("users").subscribe((res)=>{
-      this.userDB = res;
+      this.userDB = res.data;
       const data =this.userDB.filter((val:any)=>{
-        return val.uid===this.userData.value.userId && val.upass===this.userData.value.userPass})
+        return val.email===this.userData.value.userId && val.password===this.userData.value.userPass})
         if(data.length > 0 ){
           this._globalSer.signIn(this.userData.value.userId);
-          // this._route.navigate(['/maindash']);
+          
           this._route.navigate(['/maindash']);
         }else{
           window.alert("Invalid Credential")

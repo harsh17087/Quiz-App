@@ -21,7 +21,7 @@ export class MaindashComponent {
   logOut(){
     if(window.confirm("Are you sure to log out")){
       this._globalSer.signOut()
-      this._router.navigate(['quiz'])
+      this._router.navigate(['quizappdashboard'])
     }
   }
 }

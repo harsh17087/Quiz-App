@@ -38,7 +38,7 @@ export class LoginUserComponent {
       
       if(data.length>0){
         this._globalSer.signIn(this.userData.value.userId)
-        this._router.navigate(['examdash'])
+        this._router.navigate(['examlogin'])
       }else{
         window.alert("Invalid Credential")
       }
