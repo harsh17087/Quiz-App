@@ -1,4 +1,4 @@
-<button type="button" routerLink="voucheradd" class="btn btn-outline-primary">Add</button>
+<button *ngIf="adminLogin" type="button" routerLink="voucheradd" class="btn btn-outline-primary">Add</button>
 
 <table class="table table-hover table-bordered table-striped table-responsive">
     <thead class="table-header table-dark">
@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-4"><th>Id</th></div>
                 <div class="col-4"><th >Voucher</th></div>
-                <div class="col-4"><th >Actions</th></div>
+                <div *ngIf="adminLogin" class="col-4"><th >Actions</th></div>
             </div>
 
 
@@ -19,7 +19,7 @@
            <div class="row">
             <div class="col-4"><td>{{voucher.id}}</td></div>
             <div class="col-4"><td>{{voucher.voucher_code}}</td></div>
-            <div class="col-4"><td>
+            <div *ngIf="adminLogin" class="col-4"><td>
                 
                 <button type="button" [routerLink]="['voucheredit',voucher._id]" class="btn btn-outline-warning btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Edit</button>&nbsp;
                 <button type="button" (click)="deleteData(voucher._id)" class="btn btn-outline-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i>Delete</button>

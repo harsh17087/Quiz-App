@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 export class ExamDashboardComponent {
   examArray:any
   p:number=1
+  adminLogin:boolean=sessionStorage.getItem('user')=="harsh@gmail.com" ? true:false
   constructor(private _globalSer:GlobalService){}
 
   ngOnInit(){

@@ -16,8 +16,9 @@ export const routes: Routes = [
     {path:"quizappdashboard", component:ExamdashComponent},
     {path:"register", component:RegisterUserComponent},
     {path:"examlive", component:ExamliveComponent},
+    {path:"examlogin", component:ExamLoginComponent},
     
-    {path:"maindash", component:MaindashComponent,canActivate:[authGuard],children:[
+    {path:"maindash", component:MaindashComponent,children:[
         // add canActivate:[authGuard] in maindash later
         {path:"exam", loadChildren:()=> import('./app/exam/exam.module').then((c)=>c.ExamModule)},
         {path:"voucher", loadChildren:()=> import('./app/voucher/voucher.module').then((s)=>s.VoucherModule)},
