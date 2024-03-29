@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class VoucherEditComponent {
   id:any
   voucherData:any
+  temp:any
   constructor(private _actRoute:ActivatedRoute, private _globalSer:GlobalService,private _route:Router){}
 
   ngOnInit(){
@@ -21,8 +22,10 @@ export class VoucherEditComponent {
       // console.log(para)
        this.id=para.get("id")
       this._globalSer.singleUserGetRequest('vouchers',this.id).subscribe((res)=>{
-        console.log(res)
-        this.voucherData={...res}
+        this.temp={...res}
+        this.voucherData=this.temp.data
+        console.log(this.voucherData)
+        
       })
     })
   }

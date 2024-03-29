@@ -2,9 +2,10 @@
 
 <mat-sidenav-container class="nav-container" autosize>
   
-  
-  <mat-sidenav mode="side" opened class="side-nav" [fixedInViewport]="true" [fixedTopGap]="100" [fixedBottomGap]="100">
-        <mat-nav-list>
+  <!-- [fixedTopGap]="100" [fixedBottomGap]="100" -->
+  <mat-sidenav mode="side" opened class="side-nav" [fixedInViewport]="true" >
+    <img src="https://t3.ftcdn.net/jpg/05/32/73/04/360_F_532730425_EiwrFXiBgzIedTDr44MBmYsxYZ0opAnK.jpg" alt="" style="width: 10rem;margin-left: 1rem;">    
+    <mat-nav-list style="margin-top: 1rem;">
             <a href="maindash/result" mat-list-item>
               <span class="entry">
                 <mat-icon>assessment</mat-icon>
@@ -29,7 +30,7 @@
     
     <mat-sidenav-content>
       <mat-toolbar class="title-toolbar"> 
-        <mat-toolbar-row> 
+        <mat-toolbar-row style="background-color: aqua;"> 
           <span class="title-center">Welcome <b>{{showName}}</b></span> 
           
           <span class="log-out"></span> 

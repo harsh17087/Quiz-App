@@ -12,6 +12,7 @@ import { GlobalService } from '../../../shared/services/global.service';
 export class ExamEditComponent {
   id:any
   examData:any
+  temp:any
   constructor(private _actRoute:ActivatedRoute, private _globalSer:GlobalService,private _route:Router){}
 
   ngOnInit(){
@@ -21,8 +22,8 @@ export class ExamEditComponent {
       // console.log(para)
        this.id=para.get("id")
       this._globalSer.singleUserGetRequest('exams',this.id).subscribe((res)=>{
-        console.log(res)
-        this.examData={...res}
+        this.temp={...res}
+        this.examData=this.temp.data
       })
     })
   }
