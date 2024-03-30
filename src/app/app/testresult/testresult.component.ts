@@ -25,4 +25,12 @@ export class TestresultComponent {
   ngOnInit(){
     this.getData()
   }
+  logOut(){
+    if(window.confirm('Do you want to Log out')){
+      this._globalSer.signOut()
+      this._route.navigate(['quiz'])
+    }
+    
+    
+  }
 }

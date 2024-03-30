@@ -8,20 +8,23 @@ import { authGuard } from './shared/guards/auth.guard';
 import { RegisterUserComponent } from './app/register-user/register-user.component';
 import { ExamLoginComponent } from './app/exam-login/exam-login.component';
 import { TestresultComponent } from './app/testresult/testresult.component';
+import { ResultDashboardComponent } from './app/result/result-dashboard/result-dashboard.component';
 
 export const routes: Routes = [
 
     {path : "", redirectTo:"quiz", pathMatch:"full"},
     {path:"quiz", component:LoginUserComponent},
-    {path:"examdash", component:ExamLoginComponent},
+    {path:"examdash",canActivate:[authGuard], component:ExamLoginComponent},
     {path:"quizappdashboard", component:ExamdashComponent},
     {path:"register", component:RegisterUserComponent},
-    {path:"examlive", component:ExamliveComponent},
-    {path:"examlogin", component:ExamLoginComponent},
-    {path:"testresult", component:TestresultComponent},
+    {path:"examlive",canActivate:[authGuard], component:ExamliveComponent},
+    {path:"examlogin",canActivate:[authGuard], component:ExamLoginComponent},
+    {path:"testresult",canActivate:[authGuard], component:TestresultComponent},
     
     {path:"maindash", component:MaindashComponent,children:[
         // add canActivate:[authGuard] in maindash later
+     {path:"", component:ResultDashboardComponent},
+        
         {path:"exam", loadChildren:()=> import('./app/exam/exam.module').then((c)=>c.ExamModule)},
         {path:"voucher", loadChildren:()=> import('./app/voucher/voucher.module').then((s)=>s.VoucherModule)},
         {path:"result", loadChildren:()=> import('./app/result/result.module').then((f)=>f.ResultModule)},

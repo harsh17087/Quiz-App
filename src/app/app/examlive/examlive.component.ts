@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, viewChild } from '@angular/core';
 import { GlobalService } from '../../shared/services/global.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { FormGroup,FormControl,FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
 @Component({
   selector: 'app-examlive',
   standalone: true,
@@ -12,7 +14,7 @@ import { Router } from '@angular/router';
   templateUrl: './examlive.component.html',
   styleUrl: './examlive.component.css'
 })
-export class ExamliveComponent {
+export class ExamliveComponent{
   questionArray:any
   temp:any
   correct:number=0
@@ -92,7 +94,7 @@ export class ExamliveComponent {
     logOut(){
       if(window.confirm('Do you want to quit test and Log out')){
         this._globalSer.signOut()
-        this._route.navigate(['quizappdashboard'])
+        this._route.navigate(['quiz'])
       }
       
       
@@ -102,5 +104,6 @@ export class ExamliveComponent {
     showAnswer(){
       this._route.navigate(['testresult'])
     }
+
     
 }
