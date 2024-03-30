@@ -7,6 +7,7 @@ import { MaindashComponent } from './app/maindash/maindash.component';
 import { authGuard } from './shared/guards/auth.guard';
 import { RegisterUserComponent } from './app/register-user/register-user.component';
 import { ExamLoginComponent } from './app/exam-login/exam-login.component';
+import { TestresultComponent } from './app/testresult/testresult.component';
 
 export const routes: Routes = [
 
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {path:"register", component:RegisterUserComponent},
     {path:"examlive", component:ExamliveComponent},
     {path:"examlogin", component:ExamLoginComponent},
+    {path:"testresult", component:TestresultComponent},
     
     {path:"maindash", component:MaindashComponent,children:[
         // add canActivate:[authGuard] in maindash later

@@ -17,13 +17,10 @@ export class ExamliveComponent {
   temp:any
   correct:number=0
   showCorrect:boolean=false
-  // constructor(private _globalSer:GlobalService){}
+  show_answer:boolean=false
+  
   constructor(private fb:FormBuilder, private _globalSer:GlobalService,private _route:Router){}
 
-
-  // ngOnInit(){
-  //   this.getData()
-  // }
 
   getData(){
     this._globalSer.getRequest('questions').subscribe((res)=>{
@@ -42,12 +39,12 @@ export class ExamliveComponent {
       102:new FormControl(""),
       103:new FormControl(""),
       104:new FormControl(""),
-      // markedAnswer5:new FormControl(""),
-      // markedAnswer6:new FormControl(""),
-      // markedAnswer7:new FormControl(""),
-      // markedAnswer8:new FormControl(""),
-      // markedAnswer9:new FormControl(""),
-      // markedAnswer10:new FormControl(""),
+      105:new FormControl(""),
+      106:new FormControl(""),
+      107:new FormControl(""),
+      108:new FormControl(""),
+      109:new FormControl(""),
+      110:new FormControl(""),
       
       // term:new FormControl("",[Validators.requiredTrue])
  
@@ -71,12 +68,39 @@ export class ExamliveComponent {
       if(key=='104' && this.temp[key]=='Jaipur'){
         this.correct++
       }
+      if(key=='105' && this.temp[key]=='Kolkata'){
+        this.correct++
+      }
+      if(key=='106' && this.temp[key]=='Bangalore'){
+        this.correct++
+      }
+      if(key=='107' && this.temp[key]=='India'){
+        this.correct++
+      }
+      if(key=='108' && this.temp[key]=='Paris'){
+        this.correct++
+      }
+      if(key=='109' && this.temp[key]=='Christopher Nolan'){
+        this.correct++
+      }
+      if(key=='110' && this.temp[key]=='2019'){
+        this.correct++
+      }
+      
+      }
     }
-    console.log(this.correct)
-    // this._globalSer.postRequest('users',data).subscribe(()=>{
-    //   window.alert("User Added successfully")
-    //   this._route.navigate(["quiz"])
-    // })
-  }
+    logOut(){
+      if(window.confirm('Do you want to quit test and Log out')){
+        this._globalSer.signOut()
+        this._route.navigate(['quizappdashboard'])
+      }
+      
+      
+    }
+  
 
+    showAnswer(){
+      this._route.navigate(['testresult'])
+    }
+    
 }

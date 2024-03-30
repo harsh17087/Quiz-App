@@ -1,21 +1,8 @@
-<!-- <div class="row" class="container" *ngFor="let question of questionArray?.data">
-    
-    <p>{{question.question_des}}</p>
-    <div class="row">
-        <div class="col-3">{{question.option1}}</div>
-        <div class="col-3">{{question.option2}}</div>
-    </div>
-    <div class="row">
-        <div class="col-3">{{question.option3}}</div>
-        <div class="col-3">{{question.option4}}</div>
-    </div>
-    
-</div> -->
-
 
 <form style="margin: 30px;" #refutdf="ngForm" [formGroup]="answerForm" (ngSubmit)="submitData(refutdf.value)" class="file">
-<h2 *ngIf="showCorrect">Correct Answers : {{correct}}</h2>
-    
+<h2 *ngIf="showCorrect">Correct Answers : {{correct}}</h2> &nbsp; &nbsp; 
+<button *ngIf="showCorrect" type="button" class="btn btn-primary" (click)="showAnswer()">Show Answers</button>
+<button class="btn btn-danger btn-sm" style="float: right;" (click)="logOut()">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button>
     <div class="container" style="margin-top: 100px;background-color: antiquewhite;">
         
 
@@ -24,7 +11,7 @@
             <div class="col-12" *ngFor="let question of questionArray">
                 <p>{{question.question_code-100}}. {{question.question_des}}</p>
                 
-                <input type="radio" class="form-check-input"  name="{{question.question_code}}" formControlName="{{question.question_code}}" value="{{question.option1}}">{{question.option1}}
+                <input type="radio" class="form-check-input"name="{{question.question_code}}" formControlName="{{question.question_code}}" value="{{question.option1}}"><span id="option1">{{question.option1}}</span>
                 <label class="form-check-label"></label> <br>
                 <input type="radio" class="form-check-input"  name="{{question.question_code}}" formControlName="{{question.question_code}}" value="{{question.option2}}"> {{question.option2}}
                 <label class="form-check-label"></label><br>
@@ -32,44 +19,22 @@
                 <label class="form-check-label"></label><br>
                 <input type="radio" class="form-check-input"  name="{{question.question_code}}" formControlName="{{question.question_code}}" value="{{question.option4}}"> {{question.option4}}
                 <label class="form-check-label"></label>
-                <br><br>
+                <br>
+                <br>
                
             </div>
         </div>
+        
 
 
         <br>
         
         <br>
        
-        <!-- <div class="row">
-            <div class="col-6 line-1">
-                
-            </div>
-            <b class="text-center">or</b>
-            <div class="col-6 line-1">
-                
-            </div> 
-        </div> 
-        <br> -->
-        <!-- <div class="row">
-            <div class="col-4 text-center"><button><i class="fa fa-google" aria-hidden="true"></i></button></div>
-            <div class="col-4 text-center"><button><i class="fa fa-facebook" aria-hidden="true"></i></button></div>
-            <div class="col-4 text-center"><button><i class="fa fa-linkedin" aria-hidden="true"></i></button></div>
-        </div>
-        <br> -->
-        <!-- <div class="row">
-            <div class="col-12">
-                <input type="checkbox" class="form-check-input" name="term" formControlName="term">&nbsp;
-                <label for="" class="form-check-label">I accept the Terms and Conditions</label>
-                <div class="alert alert-danger" *ngIf="signUpForm.get('term').invalid && signUpForm.get('term').touched ">
-                    Please accept Terms and Conditions
-                </div>
-            </div>
-        </div> -->
         <br>
         <div><button type="submit" style="margin-left: 39%;" class="btn btn-outline-primary btn-block">Submit</button>&nbsp; &nbsp; 
         <button type="reset" class="btn btn-outline-secondary btn-block" [disabled]="refutdf.invalid" >Cancel</button></div> <br>
+
     </div>
      
-    </form>
+</form>
