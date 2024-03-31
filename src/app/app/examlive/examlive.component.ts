@@ -53,6 +53,7 @@ export class ExamliveComponent{
     })
   }
   submitData(data:any){
+    window.scroll(0,0)
     this.showCorrect=true
     console.log(this.answerForm.value)
     this.temp=this.answerForm.value
@@ -104,6 +105,6 @@ export class ExamliveComponent{
     showAnswer(){
       this._route.navigate(['testresult'])
     }
-
+    
     
 }
